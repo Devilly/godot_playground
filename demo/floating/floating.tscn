@@ -4,6 +4,8 @@
 [ext_resource type="Script" path="res://demo/floating/floating.cs" id="2_iv0md"]
 
 [node name="Sprite2D" type="Sprite2D"]
-position = Vector2(1200, 540)
+position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("1_6tchb")
 script = ExtResource("2_iv0md")
+Placement = Vector2(1200, 540)
+Oscilliation = 80
