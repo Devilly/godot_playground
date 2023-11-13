@@ -14,8 +14,13 @@ public partial class custom_drawing : Node2D
     DrawCircle(new(500, 100), 30, WHITE);
     DrawPolyline(new Vector2[] { new(100, 500), new (200, 500), new(150, 600), new(100, 500)}, WHITE, 2, true);
 
-    var image = Image.LoadFromFile("res://icon.svg");
-    var texture = ImageTexture.CreateFromImage(image);
+    // Works for loading files outside of the project after export:
+    // var image = Image.LoadFromFile("res://icon.svg");
+    // var texture = ImageTexture.CreateFromImage(image);
+
+    // This one works for files inside the project after export:
+    var texture = GD.Load<Texture2D>("res://icon.svg");
+
     DrawPrimitive(
       new Vector2[]{ new(700, 700), new(800, 700), new(800, 800), new(700, 800) },
       new[]{ WHITE },
