@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://duudfawsgvpas"]
+[gd_scene load_steps=4 format=3 uid="uid://duudfawsgvpas"]
 
 [ext_resource type="PackedScene" uid="uid://dv61wdtqboy4q" path="res://demo/controller_input/button.tscn" id="2_4qbk3"]
 [ext_resource type="PackedScene" uid="uid://cs6h1o55bns86" path="res://demo/controller_input/stick.tscn" id="2_qh1je"]
+[ext_resource type="PackedScene" uid="uid://crt08hrdhbv5n" path="res://demo/controller_input/trigger.tscn" id="3_g8dro"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(700, 200)
 
 [node name="LeftStick" parent="." instance=ExtResource("2_qh1je")]
 position = Vector2(300, 500)
@@ -21,16 +23,48 @@ positiveY = "game_look_down"
 
 [node name="Button" parent="." instance=ExtResource("2_4qbk3")]
 position = Vector2(850, 360)
-action = "game_accept"
+action = "game_action_down"
 
 [node name="Button2" parent="." instance=ExtResource("2_4qbk3")]
 position = Vector2(850, 240)
-action = "game_heavy_attack"
+action = "game_action_up"
 
 [node name="Button3" parent="." instance=ExtResource("2_4qbk3")]
 position = Vector2(790, 300)
-action = "game_weak_attack"
+action = "game_action_left"
 
 [node name="Button4" parent="." instance=ExtResource("2_4qbk3")]
 position = Vector2(910, 300)
-action = "game_decline"
+action = "game_action_right"
+
+[node name="Button5" parent="." instance=ExtResource("2_4qbk3")]
+position = Vector2(150, 360)
+action = "game_down"
+
+[node name="Button6" parent="." instance=ExtResource("2_4qbk3")]
+position = Vector2(150, 240)
+action = "game_up"
+
+[node name="Button7" parent="." instance=ExtResource("2_4qbk3")]
+position = Vector2(90, 300)
+action = "game_left"
+
+[node name="Button8" parent="." instance=ExtResource("2_4qbk3")]
+position = Vector2(210, 300)
+action = "game_right"
+
+[node name="Button9" parent="." instance=ExtResource("2_4qbk3")]
+position = Vector2(150, 125)
+action = "game_shoulder_left"
+
+[node name="Button10" parent="." instance=ExtResource("2_4qbk3")]
+position = Vector2(850, 125)
+action = "game_shoulder_right"
+
+[node name="Trigger" parent="." instance=ExtResource("3_g8dro")]
+position = Vector2(150, 25)
+action = "game_trigger_left"
+
+[node name="Trigger2" parent="." instance=ExtResource("3_g8dro")]
+position = Vector2(850, 25)
+action = "game_trigger_right"
