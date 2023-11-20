@@ -20,6 +20,6 @@ public partial class Trigger : Node2D
 		var actionableHeight = height * strenght;
 
 		DrawRect(new(-width / 2, 0, width, height), new Color(Colors.White) { A = .3f + .7f * strenght }, false, 3);
-		DrawRect(new(-width / 2, height - actionableHeight, width, actionableHeight), new Color(Colors.White) { A = .3f + .7f * strenght }, true, 3);
+		DrawRect(new(-width / 2, height - actionableHeight, width, actionableHeight), new Color(Colors.White) { A = .3f + .7f * strenght }, true);
     }
 }

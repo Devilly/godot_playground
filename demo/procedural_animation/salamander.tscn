@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://qbbcc52ab4s5"]
+
+[ext_resource type="Script" path="res://demo/procedural_animation/Salamander.cs" id="1_n1gvc"]
+[ext_resource type="PackedScene" uid="uid://dnytjflaxuvp3" path="res://demo/procedural_animation/segment.tscn" id="2_xvxs3"]
+
+[node name="Salamander" type="Node2D"]
+script = ExtResource("1_n1gvc")
+Segment = ExtResource("2_xvxs3")
