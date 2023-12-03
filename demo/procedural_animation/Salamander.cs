@@ -6,6 +6,8 @@ using System.Linq;
 using System.Numerics;
 using Vector2 = Godot.Vector2;
 
+// Start of https://twitter.com/TheRujiK/status/969581641680195585
+
 public partial class Salamander : Node2D
 {
 	[Export]
