@@ -15,7 +15,8 @@ func _process(_delta):
 	var state = socket.get_ready_state()
 	if state == WebSocketPeer.STATE_OPEN:
 		while socket.get_available_packet_count():
-			frame.emit(socket.get_packet().get_string_from_utf8())
+			var payload = socket.get_packet().get_string_from_utf8()
+			frame.emit(payload)
 	elif state == WebSocketPeer.STATE_CLOSING:
 		pass
 	elif state == WebSocketPeer.STATE_CLOSED:

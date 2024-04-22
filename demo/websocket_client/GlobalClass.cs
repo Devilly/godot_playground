@@ -1,9 +1,7 @@
 using Godot;
 using System.Text.Json;
-using System.Text.Json.Nodes;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 
 public struct Frame
 {
