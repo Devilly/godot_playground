@@ -7,13 +7,19 @@
 [node name="WebsocketClient" type="Node2D"]
 script = ExtResource("1_ds0wr")
 
-[node name="GlobalClass" type="Node" parent="." node_paths=PackedStringArray("Head")]
+[node name="GlobalClass" type="Node" parent="." node_paths=PackedStringArray("Head", "Video")]
 script = ExtResource("2_d4kh4")
 Head = NodePath("../Head")
+Video = NodePath("../Video")
+
+[node name="Video" type="Sprite2D" parent="."]
+position = Vector2(500, 375)
+scale = Vector2(0.5, 0.5)
 
 [node name="Head" type="Sprite2D" parent="."]
 position = Vector2(505, 303)
-scale = Vector2(0.248047, 0.248047)
+scale = Vector2(0.248, 0.248)
 texture = ExtResource("3_x30ny")
 
-[connection signal="frame" from="." to="GlobalClass" method="ReceiveFrame"]
+[connection signal="body_frame" from="." to="GlobalClass" method="ReceiveBodyFrame"]
+[connection signal="color_frame" from="." to="GlobalClass" method="ReceiveColorFrame"]

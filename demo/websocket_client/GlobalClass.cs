@@ -28,9 +28,23 @@ public partial class GlobalClass : Node
 {
 	[Export]
 	public Sprite2D Head;
-	public void ReceiveFrame(string frame)
+
+	[Export]
+	public Sprite2D Video;
+
+	// PackedByteArray maps to byte[], as documented at https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_collections.html#packedarray
+	public void ReceiveColorFrame(byte[] data)
 	{
-		var json = JsonSerializer.Deserialize<Frame>(frame);
+		var image = new Image();
+		image.LoadJpgFromBuffer(data);
+		var texture = new ImageTexture();
+		texture.SetImage(image);
+		Video.Texture = texture;
+	}
+
+	public void ReceiveBodyFrame(string data)
+	{
+		var json = JsonSerializer.Deserialize<Frame>(data);
 		IEnumerable<Joint> trackedHeads =
 			from body in json.bodies
 			where body.tracked == true
